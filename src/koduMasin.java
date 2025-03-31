@@ -36,4 +36,11 @@ public class koduMasin implements masin{
         }
         return energiaK;
     }
+    @Override
+    public String toString() {
+        return "koduMasina nimi on:" + nimi +
+                ", tunnis kasutab: " + kwH +" Kwh elektrit"+
+                ", Masin on '" + brand + "Masin" +
+                ", seletus='" + seletus;
+    }
 }
