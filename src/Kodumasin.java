@@ -1,15 +1,15 @@
-public class koduMasin implements masin{
-    private String energiaEffektiivsus;
-    private double kwH;
-    private String nimi;
+public class Kodumasin implements Masin {
+    private String nimetus;
     private String brand;
+    private String energiaEfektiivsus;
+    private double kwH;
     private String seletus;
 
-    public koduMasin(String energiaEffektiivsus, String nimi, String brand, double kwH) {
-        this.energiaEffektiivsus = energiaEffektiivsus;
-        this.kwH = kwH;
-        this.nimi = nimi;
+    public Kodumasin(String nimetus, String brand, String energiaEfektiivsus, double kwH) {
+        this.nimetus = nimetus;
         this.brand = brand;
+        this.energiaEfektiivsus = energiaEfektiivsus;
+        this.kwH = kwH;
         this.seletus = null;
     }
     public void seletaMasin(){
@@ -22,9 +22,9 @@ public class koduMasin implements masin{
     }
     public double elektriKasutus(){
         double energiaK = 0;
-        switch(energiaEffektiivsus.toLowerCase()){
+        switch(energiaEfektiivsus.toLowerCase()){
             case("a"):
-                 energiaK = kwH * 0.5;
+                energiaK = kwH * 0.5;
             case("b"):
                 energiaK = kwH * 0.6;
             case("c"):
@@ -38,9 +38,6 @@ public class koduMasin implements masin{
     }
     @Override
     public String toString() {
-        return "koduMasina nimi on:" + nimi +
-                ", tunnis kasutab: " + kwH +" Kwh elektrit"+
-                ", Masin on '" + brand + "Masin" +
-                ", seletus='" + seletus;
+        return nimetus + " " + brand + ", energiaefektiivsuse tähis on " + energiaEfektiivsus + ", kasutab " + kwH +" kilovatt-tundi elektrit";
     }
 }

@@ -1,4 +1,4 @@
-public interface masin {
+public interface Masin {
 
     public double elektriKasutus();
 
